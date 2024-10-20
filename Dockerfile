@@ -8,3 +8,5 @@ ENV TZ=Asia/Shanghai
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 RUN pip install --no-cache-dir jupyterlab scikit-learn scipy pandas aktools akshare --upgrade
+
+CMD ["jupyter-lab", "--allow-root", "--no-browser", "--ip=0.0.0.0"]
